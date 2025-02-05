@@ -36,7 +36,6 @@ public class Solution {
             // kiểm tra kết quả hoán đổi s1 thứ nhất có bằng s2 thứ hai không và ngược lại.
             return s1Arr[first] == s2Arr[second] && s1Arr[second] == s2Arr[first];
         }
-
         return false;
     }
     }
