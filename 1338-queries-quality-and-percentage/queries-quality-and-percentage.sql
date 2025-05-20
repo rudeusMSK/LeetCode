@@ -1,5 +1,6 @@
-/* Write your T-SQL query statement below */
-select query_name, round(avg(1.0 * rating / position), 2) as quality, round(sum(iif(rating<3, 100.0, 0)) / count(rating), 2) as poor_query_percentage
-from Queries
-group by query_name
-having query_name is not null;
+Select query_name, 
+round(AVG(rating*1.0/position),2) AS quality,
+Round(sum(case when rating <3 then 1 else 0 end)*100.0/count(query_name) ,2) as poor_query_percentage 
+from Queries 
+Group by query_name
+Order BY quality desc
