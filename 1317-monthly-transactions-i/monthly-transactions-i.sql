@@ -1,3 +1,4 @@
+/*ans*/
 select left(convert(varchar, trans_date), 7) as month, 
     country, 
     count(id) as trans_count, 
